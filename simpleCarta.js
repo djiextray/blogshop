@@ -78,8 +78,8 @@ function cart(a, b) {
         var e = $("[name='smanagerongkir']").val();
         for (this.totalShip = e, a = 0, d = getElementsByClassName("simpleCart_shipping"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalShip();
         for (0 == this.totalPrice ? this.totalOrder = 0 : this.totalOrder = parseInt(this.totalPrice) + parseInt(this.totalShip), a = 0, d = getElementsByClassName("simpleCart_orders"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalOrder();
-        var booking = parseInt(this.totalOrder)*parseInt(0.3);
-        $('.simpleCart_booking').html(booking);
+        var booking = parseInt(this.totalPrice)*parseInt(0.3);
+        $('.simpleCart_booking').html('Rp '+formatNumber(booking)+'.00');
         for (a = 0, d = getElementsByClassName("simpleCart_quantity"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = String(this.totalItems);
         for (d = getElementsByClassName("fortotalPrice"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = String(this.returnTotalHarga());
         for (d = getElementsByClassName("simpleCart_weight"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = String(this.returnTotalWeight());
