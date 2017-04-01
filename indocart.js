@@ -77,8 +77,9 @@ function cart(a, b) {
         for (a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalPrice();
         var e = $("[name='smanagerongkir']").val();
         for (this.totalShip = e, a = 0, d = getElementsByClassName("simpleCart_shipping"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalShip();
-        for (0 == this.totalPrice ? this.totalOrder = 0 : this.totalOrder = parseInt(this.totalPrice) + parseInt(this.totalShip), a = 0, d = getElementsByClassName("simpleCart_orders"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalOrder();
-        var booking = parseInt(this.totalPrice)*parseFloat(0.3);
+        var lama_inap   = $("[name='smanagerinap']").val();
+        for (0 == this.totalPrice ? this.totalOrder = 0 : this.totalOrder = (parseInt(this.totalPrice) + parseInt(this.totalShip)) * parseInt(lama_inap), a = 0, d = getElementsByClassName("simpleCart_orders"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalOrder();
+        var booking = parseInt(this.totalOrder)*parseFloat(0.3);
         $('.simpleCart_booking').html('Rp '+formatNumber(booking)+'.00');
         for (a = 0, d = getElementsByClassName("simpleCart_quantity"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = String(this.totalItems);
         for (d = getElementsByClassName("fortotalPrice"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = String(this.returnTotalHarga());
