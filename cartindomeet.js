@@ -165,7 +165,41 @@ function shopping_cart(a) {
         }
     }
 }
-
+function cekAdd() {
+    var projector, printer, kamera, tas, kaos, addit;
+    //projector
+    if(document.getElementById('projector').checked) {
+        projector = "Projector, ";
+    } else {
+        projector = "";
+    }
+    //printer
+    if(document.getElementById('printer').checked) {
+        printer = "Printer, ";
+    } else {
+        printer = "";
+    }
+    //kamera
+    if(document.getElementById('kamera').checked) {
+        kamera = "Kamera, ";
+    } else {
+        kamera = "";
+    }
+    //tas
+    if(document.getElementById('tas').checked) {
+        tas = "Tas, ";
+    } else {
+        tas = "";
+    }
+    //kaos
+    if(document.getElementById('kaos').checked) {
+        kaos = "Kaos, ";
+    } else {
+        kaos = "";
+    }
+    addit = projector+printer+kamera+tas+kaos;
+    $("[name='smanageraddit']").val(addit);
+}
 function updateTab() {
     var d = document.getElementById("tableCart"),
         e = document.getElementById("tableTotal");
@@ -206,7 +240,11 @@ $(document).ready(function() {
             u = $("[name='smanagerpostal']").val(),
             v = $("[name='smanagermsg']").val(),
             w = $("[name='smanagerurl']").val(),
-            x = $("#pengiriman").val();
+            x = $("#pengiriman").val(),
+            aa = $("[name='smanagerdate']").val(),
+            ab = $("[name='smanagerinap']").val(),
+            ac = $("[name='smanagerinstansi']").val(),
+            ad = $("[name='smanageraddit']").val();
         country = $("[name='smanagercountry']").val(), city = $("[name='smanagercity']").val(), method = $("[name='smanagermethod']:checked").val(), paypal = $("[name='smanagerpaypal']").val(), $.ajax({
             url: "https://files.themelate.com/blogshop/send-invoice-order.php?from=ajax",
             type: "POST",
@@ -234,6 +272,10 @@ $(document).ready(function() {
                 smanagermsg: v,
                 smanagerurl: w,
                 cekongkir: x,
+                smanagerdate : aa,
+                smanagerinap : ab,
+                smanagerinstansi : ac,
+                smanageraddit : ad,
                 smanagercountry: country,
                 smanagercity: city,
                 smanagermethod: method,
