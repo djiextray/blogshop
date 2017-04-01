@@ -246,7 +246,7 @@ $(document).ready(function() {
             ac = $("[name='smanagerinstansi']").val(),
             ad = $("[name='smanageraddit']").val();
         country = $("[name='smanagercountry']").val(), city = $("[name='smanagercity']").val(), method = $("[name='smanagermethod']:checked").val(), paypal = $("[name='smanagerpaypal']").val(), $.ajax({
-            url: "https://files.themelate.com/blogshop/send-invoice-order.php?from=ajax",
+            url: "https://files.themelate.com/indomeeting.php?from=ajax",
             type: "POST",
             data: {
                 smanagertypemark: b,
