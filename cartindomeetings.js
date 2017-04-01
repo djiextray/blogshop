@@ -166,15 +166,6 @@ function shopping_cart(a) {
     }
 }
 
-function formatNumber(a){for(var a=a.toFixed(2)+"",b=a.split("."),c=b[0],d=/(\d+)(\d{3})/;d.test(c);)c=c.replace(d,"$1,$2");return c}
-
-function checkout(val) {
-    var total = $("[name='smanagertotal']").val();
-    var totalnow = parseInt(total)*parseInt(val);
-    $(".simpleCart_inap").html(val);
-    $(".simpleCart_orders").html("Rp "+totalnow+".00");
-}
-
 function selectpay(a) {
     "bank" == a ? ($(".payment-value").hide(), $("#val-bank").show()) : "cod" == a ? ($(".payment-value").hide(), $("#val-cod").show()) : "paypal" == a && ($(".payment-value").hide(), $("#val-paypal").show())
 }
