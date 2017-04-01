@@ -172,7 +172,7 @@ function checkout(val) {
     var total = $("[name='smanagertotal']").val();
     var totalnow = parseInt(total)*parseInt(val);
     $(".simpleCart_inap").html(val);
-    $(".simpleCart_orders").html("Rp "+formatNumber(val)+".00");
+    $(".simpleCart_orders").html("Rp "+totalnow+".00");
 }
 
 function selectpay(a) {
