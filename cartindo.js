@@ -166,6 +166,12 @@ function shopping_cart(a) {
     }
 }
 
+function updateTab() {
+    var d = document.getElementById("tableCart"),
+        e = document.getElementById("tableTotal");
+    $("[name='smanagerisicart']").val(d.innerHTML + e.innerHTML);
+}
+
 function selectpay(a) {
     "bank" == a ? ($(".payment-value").hide(), $("#val-bank").show()) : "cod" == a ? ($(".payment-value").hide(), $("#val-cod").show()) : "paypal" == a && ($(".payment-value").hide(), $("#val-paypal").show())
 }
