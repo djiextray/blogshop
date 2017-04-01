@@ -78,6 +78,7 @@ function cart(a, b) {
         var e = $("[name='smanagerongkir']").val();
         for (this.totalShip = e, a = 0, d = getElementsByClassName("simpleCart_shipping"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalShip();
         var lama_inap   = $("[name='smanagerinap']").val();
+        $(".simpleCart_inap").html(lama_inap);
         for (0 == this.totalPrice ? this.totalOrder = 0 : this.totalOrder = (parseInt(this.totalPrice) + parseInt(this.totalShip)) * parseInt(lama_inap), a = 0, d = getElementsByClassName("simpleCart_orders"), a = 0; a < d.length; a++) b = d[a], b.innerHTML = this.returnTotalOrder();
         var booking = parseInt(this.totalOrder)*parseFloat(0.3);
         $('.simpleCart_booking').html('Rp '+formatNumber(booking)+'.00');
